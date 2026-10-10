@@ -2,3 +2,44 @@ class HashMap:
     def __init__(self, capacity=10):
         self.capacity = capacity
         self.buckets = [[] for _ in range(capacity)]
+
+    def _get_index(self, key):
+        return hash(key) % self.capacity
+
+    def put(self, key, value):
+        index = self._get_index(key)
+        bucket = self.buckets[index]
+
+        # Update the value if the key already exists
+        for i, (existing_key, existing_value) in enumerate(bucket):
+            if existing_key == key:
+                bucket[i] = (key, value)
+                return
+
+        # Otherwise, add a new key-value pair
+        bucket.append((key, value))
+
+    def get(self, key):
+        index = self._get_index(key)
+        bucket = self.buckets[index]
+
+        for existing_key, value in bucket:
+            if existing_key == key:
+                return value
+
+        raise KeyError(key)
+
+    def remove(self, key):
+        index = self._get_index(key)
+        bucket = self.buckets[index]
+
+        for i, (existing_key, value) in enumerate(bucket):
+            if existing_key == key:
+                bucket.pop(i)
+                return
+
+        raise KeyError(key)
+
+    def display(self):
+        for index, bucket in enumerate(self.buckets):
+            print(index, ":", bucket)
