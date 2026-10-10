@@ -43,3 +43,20 @@ class HashMap:
     def display(self):
         for index, bucket in enumerate(self.buckets):
             print(index, ":", bucket)
+
+
+# Test it
+hm = HashMap()
+
+hm.put("apple", 5)
+hm.put("banana", 8)
+hm.put("orange", 3)
+
+print(hm.get("apple"))  # 5
+
+hm.put("apple", 10)
+print(hm.get("apple"))  # 10
+
+hm.remove("banana")
+
+hm.display()
