@@ -41,3 +41,19 @@ class BinarySearchTree:
                 current = current.right
 
         return False
+
+    def inorder(self):
+        self._inorder_recursive(self.root)
+
+    def _inorder_recursive(self, current):
+        if current is None:
+            return
+
+        self._inorder_recursive(current.left)
+        print(current.data, end=" ")
+        self._inorder_recursive(current.right)
+
+    def display(self):
+        self.inorder()
+        print()
+
