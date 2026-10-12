@@ -7,6 +7,7 @@ class Node:
 class BinarySearchTree:
     def __init__(self):
         self.root = None
+
     def insert(self, data):
         if self.root is None:
             self.root = Node(data)
@@ -25,3 +26,18 @@ class BinarySearchTree:
                 current.right = Node(data)
             else:
                 self._insert_recursive(current.right, data)
+
+        # Ignore duplicate values
+
+    def search(self, target):
+        current = self.root
+
+        while current is not None:
+            if target == current.data:
+                return True
+            elif target < current.data:
+                current = current.left
+            else:
+                current = current.right
+
+        return False
