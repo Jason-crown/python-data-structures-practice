@@ -57,3 +57,14 @@ class BinarySearchTree:
         self.inorder()
         print()
 
+# Test the tree
+tree = BinarySearchTree()
+
+for value in [8, 3, 10, 1, 6, 14]:
+    tree.insert(value)
+
+tree.display()              # 1 3 6 8 10 14
+
+print(tree.search(6))       # True
+print(tree.search(99))      # False
+
