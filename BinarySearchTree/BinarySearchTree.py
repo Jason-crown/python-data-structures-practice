@@ -62,6 +62,9 @@ class BinarySearchTree:
         return False
 
     def inorder(self):
+        """Performs an inorder traversal of the binary search tree
+        and prints the values in sorted order.
+        This method starts the recursive traversal from the root of the tree."""
         self._inorder_recursive(self.root)
 
     def _inorder_recursive(self, current):
