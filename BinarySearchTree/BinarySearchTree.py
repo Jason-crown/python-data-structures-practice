@@ -12,6 +12,11 @@ class Node:
         self.right = None
 
 class BinarySearchTree:
+    """A class representing a binary search tree (BST).
+    The BST maintains the property that for any given node, all values in the left subtree are less than the node's value, and all values in the right subtree are greater.
+    Attributes:
+        root: The root node of the binary search tree.
+    """
     def __init__(self):
         self.root = None
 
