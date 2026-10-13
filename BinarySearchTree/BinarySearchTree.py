@@ -76,6 +76,8 @@ class BinarySearchTree:
         self._inorder_recursive(current.right)
 
     def display(self):
+        """Displays the values in the binary search tree in sorted order
+        by performing an inorder traversal."""
         self.inorder()
         print()
 
