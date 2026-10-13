@@ -13,7 +13,9 @@ class Node:
 
 class BinarySearchTree:
     """A class representing a binary search tree (BST).
-    The BST maintains the property that for any given node, all values in the left subtree are less than the node's value, and all values in the right subtree are greater.
+    The BST maintains the property that for any given node,
+    all values in the left subtree are less than the node's value,
+    and all values in the right subtree are greater.
     Attributes:
         root: The root node of the binary search tree.
     """
@@ -42,6 +44,11 @@ class BinarySearchTree:
         # Ignore duplicate values
 
     def search(self, target):
+        """Searches for a target value in the binary search tree.
+        Args:
+            target: The value to search for in the tree.
+        Returns:
+            True if the value is found, False otherwise."""
         current = self.root
 
         while current is not None:
