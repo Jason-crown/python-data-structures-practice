@@ -1,4 +1,11 @@
 class Node:
+    """A class representing a node in a binary search tree.
+    Each node contains data and pointers to its left and right children.
+    Attributes:
+        data: The value stored in the node.
+        left: A reference to the left child node.
+        right: A reference to the right child node.
+    """
     def __init__(self, data):
         self.data = data
         self.left = None
